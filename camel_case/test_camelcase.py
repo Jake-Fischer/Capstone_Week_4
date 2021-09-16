@@ -76,5 +76,11 @@ class TestCamelCase(unittest.TestCase):
         self.assertEqual('😀Emoji😃😄😁😆😅', camelcase.camel_case('😀      emoji       😃😄 😁😆 😅'))
 
 
+    # Test with foreign symbols
+    def test_camelcase_strings_with_foreign_symobls(self):
+        self.assertEqual('renéDescartes', camelcase.camel_case('René Descartes'))
+        self.assertEqual('ةالعالميةانترنيتويونيكود،حيثستتم،علىالصعيدينالدوليوالم', camelcase.camel_case('ة العالمية انترنيت ويونيكود، حيث ستتم، على الصعيدين الدولي والم'))
+        self.assertEqual('かさは二つしかありません。', camelcase.camel_case('かさは 二つしか ありません。'))
+
 if __name__ == '__main__':
     unittest.main()
