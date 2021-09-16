@@ -13,6 +13,7 @@ from unittest import TestCase
 
 class TestStudentLists(TestCase):
 
+
     def test_cant_creat_class_with_negative_students(self):
         with self.assertRaises(StudentError):
             test_class = ClassList(-1)
@@ -128,7 +129,7 @@ class TestStudentLists(TestCase):
         index = test_class.index_of_student('Test Student')
         self.assertIsNone(index)
  
- 
+
     ## TODO write another test for index_of_student. In the case when the 
     # class_list is not empty but has some students.
     # assert that searching for a student name that is not in the list, returns None.
